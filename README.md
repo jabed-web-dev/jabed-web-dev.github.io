@@ -1,9 +1,7 @@
 ![Jabed Hossain](https://avatars.githubusercontent.com/u/59810760?s=220&v=4)
-## Jabed Hossain
+## [Jabed Hossain](https://github.com/jabed-dev/)
 
 ### Hi there 👋
-
-**jabed-dev/jabed-dev** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
 Here are some ideas to get you started:
 
