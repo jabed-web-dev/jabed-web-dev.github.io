@@ -1,7 +1,7 @@
 window.addEventListener('load', () => {
     const html = document.documentElement
     const style = document.createElement('style')
-    const css = `.dark{color-scheme:dark}.absolute{position:absolute}.top-px{top:1px}.right-px{right:1px}.-top-1{top:-.25rem}.z-\\[101\\]{z-index:101}.z-\\[100\\]{z-index:100}.box-border{box-sizing:border-box}.inline{display:inline}.h-6{height:1.5rem}.w-6{width:1.5rem}.w-full{width:100%}.cursor-pointer{cursor:pointer}.select-none{-webkit-user-select:none;-moz-user-select:none;user-select:none}.resize{resize:both}.rounded-lg{border-radius:.5rem}.rounded-full{border-radius:9999px}.bg-slate-700{background-color:rgb(51 65 85/var(--tw-bg-opacity))}.bg-slate-300,.bg-slate-700{--tw-bg-opacity:1}.bg-slate-300{background-color:rgb(203 213 225/var(--tw-bg-opacity))}.bg-gray-700\\/50{background-color:#37415180}.fill-slate-400{fill:#94a3b8}.fill-sky-300\\/20{fill:#7dd3fc33}.stroke-slate-500{stroke:#64748b}.px-2{padding-left:.5rem;padding-right:.5rem}.py-0{padding-top:0;padding-bottom:0}.text-center{text-align:center}.font-sans{font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji}.text-xs{font-size:.75rem;line-height:1rem}.leading-3{line-height:.75rem}.text-slate-500{color:rgb(100 116 139/var(--tw-text-opacity))}.text-gray-200,.text-slate-500{--tw-text-opacity:1}.text-gray-200{color:rgb(229 231 235/var(--tw-text-opacity))}.shadow{--tw-shadow:0 1px 3px 0 #0000001a,0 1px 2px -1px #0000001a;--tw-shadow-colored:0 1px 3px 0 var(--tw-shadow-color),0 1px 2px -1px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}.outline-none{outline:2px solid #0000;outline-offset:2px}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}.active\\:border:active{border-width:1px}.active\\:border-solid:active{border-style:solid}.active\\:border-slate-500:active{--tw-border-opacity:1;border-color:rgb(100 116 139/var(--tw-border-opacity))}.active\\:border-slate-400:active{--tw-border-opacity:1;border-color:rgb(148 163 184/var(--tw-border-opacity))}.group:hover .group-hover\\:fill-slate-300{fill:#cbd5e1}.group:hover .group-hover\\:stroke-slate-700{stroke:#334155}`
+    const css = `.dark{color-scheme:dark}.absolute{position:absolute}.top-px{top:1px}.right-px{right:1px}.z-\\[101\\]{z-index:101}.box-border{box-sizing:border-box}.h-6{height:1.5rem}.w-6{width:1.5rem}.cursor-pointer{cursor:pointer}.select-none{-webkit-user-select:none;-moz-user-select:none;user-select:none}.rounded-lg{border-radius:.5rem}.bg-slate-700{--tw-bg-opacity:1;background-color:rgb(51 65 85/var(--tw-bg-opacity))}.bg-slate-300{--tw-bg-opacity:1;background-color:rgb(203 213 225/var(--tw-bg-opacity))}.fill-slate-400{fill:#94a3b8}.fill-sky-300\\/20{fill:#7dd3fc33}.stroke-slate-500{stroke:#64748b}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139/var(--tw-text-opacity))}.outline-none{outline:2px solid #0000;outline-offset:2px}.active\\:border:active{border-width:1px}.active\\:border-solid:active{border-style:solid}.active\\:border-slate-500:active{--tw-border-opacity:1;border-color:rgb(100 116 139/var(--tw-border-opacity))}.active\\:border-slate-400:active{--tw-border-opacity:1;border-color:rgb(148 163 184/var(--tw-border-opacity))}.group:hover .group-hover\\:fill-slate-300{fill:#cbd5e1}.group:hover .group-hover\\:stroke-slate-700{stroke:#334155}`
     style.appendChild(document.createTextNode(css))
     document.head.appendChild(style)
 
@@ -34,41 +34,4 @@ window.addEventListener('load', () => {
     // Whenever the user explicitly chooses to respect the OS preference
     // localStorage.removeItem('color-scheme')
     html.appendChild(button)
-
-    const resize = document.createElement('div')
-    const span = document.createElement('span')
-    resize.setAttribute('class', 'absolute w-full font-sans text-center -top-1 z-[100]')
-    span.setAttribute('class', 'bg-gray-700/50 text-gray-200 px-2 py-0 text-xs leading-3 rounded-full shadow select-none transition-all')
-    let title = document.title
-    function mediaScreen() {
-        const screensSize = [
-            { '2XL': 1536 },
-            { XL: 1280 },
-            { LG: 1024 },
-            { MD: 768 },
-            { SM: 640 },
-            { S: 1 },
-        ]
-        let size;
-        for (let i of screensSize) {
-            if (i[Object.keys(i)] <= window.innerWidth) {
-                size = Object.keys(i)[0]
-                break
-            }
-        }
-        size = `${size} : ${window.innerWidth} × ${window.innerHeight}`
-        span.innerText = size
-        // document.title = title + ' | ' + size
-        span.style.display = 'inline'
-        setTimeout(() => {
-            span.style.display = 'none'
-        }, 2000)
-    }
-
-    ; (function () {
-        resize.appendChild(span)
-        html.appendChild(resize)
-        mediaScreen()
-        window.addEventListener('resize', mediaScreen)
-    })
 });
