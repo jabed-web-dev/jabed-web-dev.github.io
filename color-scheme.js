@@ -1,3 +1,4 @@
+(function() {
 window.addEventListener('load', () => {
     const html = document.documentElement
     const style = document.createElement('style')
@@ -35,3 +36,4 @@ window.addEventListener('load', () => {
     // localStorage.removeItem('color-scheme')
     html.appendChild(button)
 });
+})();
