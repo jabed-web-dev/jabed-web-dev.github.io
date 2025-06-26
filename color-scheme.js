@@ -56,3 +56,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 });
+
+/*
+@import "tailwindcss";
+
+.system {
+  color-scheme: light dark;
+}
+.light {
+  color-scheme: light;
+}
+.dark {
+  color-scheme: dark;
+}
+
+@custom-variant dark {
+  &:where(.dark, .dark *) {
+    @slot;
+  }
+  @media (prefers-color-scheme: dark) {
+    &:where(.system, .system *) {
+      @slot;
+    }
+  }
+}
+*/
